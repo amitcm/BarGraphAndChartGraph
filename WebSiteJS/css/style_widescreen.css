@@ -1,0 +1,212 @@
+﻿
+#cointainer_barthel
+{
+	width: 100%;
+	font-size: 12px;
+	overflow: hidden; /* contain floated elements */
+	background: #66FFFF border: 2px solid;
+	color: #39F;
+	text-align: center;
+	border-bottom: 1px solid #C4C4C4;
+	border-left: 1px solid #C4C4C4;
+	border-right: 1px solid #C4C4C4;
+	border-top: 1px solid #C4C4C4;
+	background: #F8F8F8;
+	_background-image: none;
+	-moz-box-shadow: -2px 2px 2px #c8c8c8;
+	-webkit-box-shadow: -2px 2px 2px #C8C8C8;
+}
+
+#bargraph_activities
+{
+	padding-top: 0px;
+	float: right;
+	width: 49.5%;
+	height: 250;
+	display: block;
+}
+
+#chartgraph_barthel
+{
+	padding-top: 0px;
+	float: left;
+	width: 49.5%;
+	height: 250;
+	display: block;
+}
+
+#chartgraph_activities
+{
+	margin-left: 0px;
+	padding-top: 0px;
+	float: left;
+	height: 250;
+	width: 80%;
+	display: block;
+}
+
+#patient_info
+{
+	margin-top: 15px;
+	padding-top: 0px;
+	float: right;
+	height: 225;
+	width: 18%;
+	display: block;
+}
+
+.bargraph_block_head
+{
+	font-size: 12px;
+	font-weight: bold;
+	font-family: Calibri;
+	color: black;
+	text-align: left;
+	padding: 2px 2px 2px 15px;
+	background: #D8D8D8;
+}
+
+.chartgraph_activities_block_head
+{
+	font-size: 12px;
+	font-weight: bold;
+	font-family: Calibri;
+	color: black;
+	text-align: left;
+	padding: 2px 2px 2px 15px;
+	background: #D8D8D8;
+}
+
+.chartgraph_barthel_block_head
+{
+	font-size: 12px;
+	font-weight: bold;
+	font-family: Calibri;
+	color: black;
+	text-align: left;
+	padding: 2px 2px 2px 15px;
+	background: #D8D8D8;
+}
+
+.patient_info_block_head
+{
+	font-size: 12px;
+	font-weight: bold;
+	font-family: Calibri;
+	color: black;
+	text-align: left;
+	padding: 2px 2px 2px 15px;
+	background: #D8D8D8;
+}
+
+.chartgraph_barthel_bg
+{
+	border-bottom: 1px solid #C4C4C4;
+	border-left: 1px solid #C4C4C4;
+	border-right: 1px solid #C4C4C4;
+	border-top: 1px solid #C4C4C4;
+	background: #F8F8F8;
+	_background-image: none;
+	-moz-box-shadow: -2px 2px 2px #c8c8c8;
+	-webkit-box-shadow: -2px 2px 2px #C8C8C8;
+}
+
+#wrapper {
+    width: 500px;
+    border: 1px solid black;
+    overflow: auto;
+}
+#first {
+    float: left;
+    width: 300px;
+    border: 1px solid red;
+}
+#second {
+    border: 1px solid green;
+    margin: 0 0 0 302px;
+}
+
+.chartgraph_activities_bg
+{
+	margin-top: 15px;
+	border-bottom: 1px solid #C4C4C4;
+	border-left: 1px solid #C4C4C4;
+	border-right: 1px solid #C4C4C4;
+	border-top: 1px solid #C4C4C4;
+	background: #F8F8F8;
+	_background-image: none;
+	-moz-box-shadow: -2px 2px 2px #c8c8c8;
+	-webkit-box-shadow: -2px 2px 2px #C8C8C8;
+	
+}
+
+.bargraph_bg
+{
+	border-bottom: 1px solid #C4C4C4;
+	border-left: 1px solid #C4C4C4;
+	border-right: 1px solid #C4C4C4;
+	border-top: 1px solid #C4C4C4;
+	background: #F8F8F8;
+	_background-image: none;
+	-moz-box-shadow: -2px 2px 2px #c8c8c8;
+	-webkit-box-shadow: -2px 2px 2px #C8C8C8;
+}
+.patient_info_bg
+{
+	margin-left: 15px;
+	border-bottom: 1px solid #C4C4C4;
+	border-left: 1px solid #C4C4C4;
+	border-right: 1px solid #C4C4C4;
+	border-top: 1px solid #C4C4C4;
+	background: #F8F8F8;
+	_background-image: none;
+	-moz-box-shadow: -2px 2px 2px #c8c8c8;
+	-webkit-box-shadow: -2px 2px 2px #C8C8C8;
+}
+
+table,td,th
+{
+border: 0px;
+}
+
+td
+{
+text-align: left;
+}
+
+.patient_info_label
+{
+	padding: 60px 15px 90px 15px;
+}
+
+.checkbox_parameters_1_bg
+{
+	
+    padding: 10px 10px 10px 10px;
+	float: right;
+}
+
+.checkBox
+{
+	background-position: 0px 0px; /*background-color: blue;*/
+}
+
+.checkBoxClear
+{
+	background-position: -16px 0px;
+}
+
+.checkBox, .checkBoxClear
+{
+	background-repeat: no-repeat;
+	display: inline-block;
+	float: left;
+	width: 16px;
+	height: 16px;
+	padding: 0px;
+	margin: 0px;
+	cursor: hand;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	-o-appearance: none;
+}

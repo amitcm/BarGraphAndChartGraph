@@ -1,0 +1,564 @@
+﻿<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Web Application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="js/html5_canvas_bar_graph.js" type="text/javascript"></script>
+    <link href="css/style_widescreen.css" rel="stylesheet" type="text/css" />
+    <script src="js/chart_barthel.js" type="text/javascript"></script>
+    <script src="js/chart_activities.js" type="text/javascript"></script>
+    <script src="js/jquery-1.7.2.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="cointainer_barthel">
+        <div id="chartgraph_barthel" class="chartgraph_barthel_bg">
+            <h4 class="chartgraph_barthel_block_head">
+                Barthel Score</h4>
+            <div >
+                <input id="buttonpredict10" value="predict" type="button" onclick="ButtonPredictHandler10()" />
+            </div>
+        </div>
+        <div id="bargraph_activities" class="bargraph_bg">
+            <h4 class="bargraph_block_head">
+                Activities of daily living</h4>
+        </div>
+        <div id="chartgraph_activities" class="chartgraph_activities_bg">
+            <h4 class="chartgraph_activities_block_head">
+                Activities</h4>
+            <div id="CheckBoxes" class="CheckBoxes_bg">
+                <div id="checkbox_parameters_1" class="checkbox_parameters_1_bg">
+                    <table>
+                        <tr>
+                            <td>
+                                <input id="checkbox_bath_mobility" type="checkbox" class="checkBoxClear" onclick="CheckBoxHandler()"
+                                    style="background-color: #FFFF00;" />
+                            </td>
+                            <td>
+                                Bath Mobility
+                            </td>
+                            <td>
+                                <input id="checkbox_grooming" type="checkbox" class="checkBoxClear" onclick="CheckBoxHandler()"
+                                    style="background-color: #8A2BE2;" />
+                            </td>
+                            <td>
+                                Grooming
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id="checkbox_bathing" type="checkbox" class="checkBoxClear" onclick="CheckBoxHandler()"
+                                    style="background-color: #F4A460;" />
+                            </td>
+                            <td>
+                                Bathing
+                            </td>
+                            <td>
+                                <input id="checkbox_stairs" type="checkbox" class="checkBoxClear" onclick="CheckBoxHandler()"
+                                    style="background-color: #696969;" />
+                            </td>
+                            <td>
+                                Stairs
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id="checkbox_bladder_control" type="checkbox" class="checkBoxClear" onclick="CheckBoxHandler()"
+                                    style="background-color: #F0E68C;" />
+                            </td>
+                            <td>
+                                Bladder Control
+                            </td>
+                            <td>
+                                <input id="checkbox_toilet_mobility" type="checkbox" class="checkBoxClear" onclick="CheckBoxHandler()"
+                                    style="background-color: #D2691E;" />
+                            </td>
+                            <td>
+                                Toilet Mobility
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id="checkbox_bowel_control" type="checkbox" class="checkBoxClear" onclick="CheckBoxHandler()"
+                                    style="background-color: #00FA9A;" />
+                            </td>
+                            <td>
+                                Bowel Control
+                            </td>
+                            <td>
+                                <input id="checkbox_toileting" type="checkbox" class="checkBoxClear" onclick="CheckBoxHandler()"
+                                    style="background-color: #9ACD32;" />
+                            </td>
+                            <td>
+                                Toileting
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id="checkbox_chair_mobility" type="checkbox" class="checkBox" onclick="CheckBoxHandler()"
+                                    style="background-color: #00FF00;" />
+                            </td>
+                            <td>
+                                Chair Mobility
+                            </td>
+                            <td>
+                                <input id="checkbox_using_prosthesis" type="checkbox" class="checkBox" onclick="CheckBoxHandler()"
+                                    style="background-color: #6B8E23;" />
+                            </td>
+                            <td>
+                                Using Prosthesis
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id="checkbox_dressing_lower" type="checkbox" class="checkBox" onclick="CheckBoxHandler()"
+                                    style="background-color: #40E0D0;" />
+                            </td>
+                            <td>
+                                Dressing Lower
+                            </td>
+                            <td>
+                                <input id="checkbox_walking" type="checkbox" class="checkBox" onclick="CheckBoxHandler()"
+                                    style="background-color: #A0522D;" />
+                            </td>
+                            <td>
+                                Walking
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id="checkbox_dressing_upper" type="checkbox" class="checkBox" onclick="CheckBoxHandler()"
+                                    style="background-color: #00FFFF;" />
+                            </td>
+                            <td>
+                                Dressing Upper
+                            </td>
+                            <td>
+                                <input id="checkbox_wheel_chair_ambulation" type="checkbox" class="checkBox" onclick="CheckBoxHandler()"
+                                    style="background-color: #006400;" />
+                            </td>
+                            <td>
+                                Wheel chair Ambulation
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input id="checkbox_feeding" type="checkbox" class="checkBox" onclick="CheckBoxHandler()"
+                                    style="background-color: #1E90FF;" />
+                            </td>
+                            <td>
+                                Feeding
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="patient_info" class="patient_info_bg">
+            <h4 class="patient_info_block_head">
+                Patient Info</h4>
+            <div id="patient_info_label" class="patient_info_label">
+                <label>
+                    Name: Mary Alvino</label>
+                <br />
+                <br />
+                <label>
+                    Number: 541</label>
+                <br />
+                <br />
+                <label>
+                    Diagnosis: CVA</label>
+            </div>
+        </div>
+    </div>
+    <br />
+    <script type="text/javascript">
+
+
+
+        $(document).ready(function () {
+            $(".checkBox,.checkBoxClear").click(function (srcc) {
+                if ($(this).hasClass("checkBox")) {
+                    $(this).removeClass("checkBox");
+                    $(this).addClass("checkBoxClear");
+                }
+                else {
+                    $(this).removeClass("checkBoxClear");
+                    $(this).addClass("checkBox");
+                }
+            });
+        });
+
+        var colors = ["#FFFF00", "#F4A460", "#F0E68C", "#00FA9A", "#00FF00", "#40E0D0", "#00FFFF", "#1E90FF", "#8A2BE2", "#696969", "#D2691E", "#9ACD32", "#6B8E23", "#A0522D", "#006400", ];
+
+        function createCanvas(divName, canvasName, heightDIV, widthDIV) {
+            var div = document.getElementById(divName);
+            var canvas = document.createElement('canvas');
+            div.appendChild(canvas);
+
+            if (typeof G_vmlCanvasManager != 'undefined') {
+                canvas = G_vmlCanvasManager.initElement(canvas);
+            }
+            canvas.setAttribute("height", heightDIV);
+            canvas.setAttribute("width", widthDIV);
+            canvas.setAttribute("id", canvasName);
+
+            var context = canvas.getContext("2d");
+            return context;
+        }
+        (function () {
+
+            /************************************************************************/
+            // Populate array here. SQL Lite database to be used here.
+            /*Array.prototype.fill = function (start, end) {
+            if (typeof start != "number" || typeof end != "number")
+            throw new TypeError();
+
+            while (start <= end) {
+            this.push((start++) * Math.random() * 20 + 10);
+            }
+            return this.length;
+            }*/
+
+            /************************************************************************/
+
+            var context = createCanvas("bargraph_activities", "bg_canvas_activities", 250, 600);
+            var graph = new BarGraph(context);
+            var myArray = ['10', '20', '30', '40', '50', '60', '70', '80', '10', '20', '30', '40', '50', '60', '70'];
+            //myArray.fill(0, 14);
+
+            graph.margin = 2;
+            graph.colors = colors;
+            graph.xAxisLabelArr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"];
+            graph.yAxisLabelArr = ["0", "1", "2", "3"];
+
+            (function () {
+                graph.update(myArray);
+            } ());
+
+        } ());
+
+        /************************************************************************/
+        // Initialize chart data here.
+        var dataDef = { title: "Line Chart",
+            xLabel: '',
+            yLabel: '',
+            labelFont: '19pt Arial',
+            dataPointFont: '10pt Arial',
+            renderTypes: [CanvasChart.renderType.lines, CanvasChart.renderType.points],
+            dataPointsX: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'],
+            //dataPointsY: [36.5, 72.9, 92.2, 123.2, 0, 15.8, 23.1, 3.9, 171.3, 203.2, 278.7, 308.7, 3.2, 78.7, 108.7]'100', '110', '120', '130', '140', '150'
+            dataPointsY: ['10', '20', '30', '40', '50', '60', '70', '80', '90', '10', '20', '30', '40', '50', '60']
+        };
+
+        var dataDef1 = { title: "",
+            xLabel: '',
+            yLabel: '',
+            labelFont: '',
+            dataPointFont: '',
+            renderTypes: [CanvasChart.renderType.lines, CanvasChart.renderType.points],
+            dataPointsX: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'],
+            //dataPointsY: [7.2, 3.9, 248.0, 12.8, 23.1, 36.5, 62.9, 92.2, 123.9, 151.4, 203.5, 308.5, 51.3, 20.2, 38.7] '105', '115', '125', '135', '145', '155'
+            dataPointsY: ['15', '25', '35', '45', '55', '65', '75', '85', '95', '15', '25', '35', '45', '55', '65']
+        };
+
+        var dataDef_2 = { title: "",
+            xLabel: '',
+            yLabel: '',
+            labelFont: '',
+            dataPointFont: '',
+            renderTypes: [CanvasChart.renderType.lines, CanvasChart.renderType.points],
+            dataPointsX: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'],
+            //dataPointsY: [7.2, 3.9, 248.0, 12.8, 23.1, 36.5, 62.9, 92.2, 123.9, 151.4, 203.5, 308.5, 51.3, 20.2, 38.7] '105', '115', '125', '135', '145', '155'
+            dataPointsY: ['10', '20', '15', '35', '25', '16', '45', '30', '79', '55', '25', '35', '45', '40', '65']
+        };
+
+        var dataDef_3 = { title: "",
+            xLabel: '',
+            yLabel: '',
+            labelFont: '',
+            dataPointFont: '',
+            renderTypes: [CanvasChart.renderType.lines, CanvasChart.renderType.points],
+            dataPointsX: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'],
+            //dataPointsY: [7.2, 3.9, 248.0, 12.8, 23.1, 36.5, 62.9, 92.2, 123.9, 151.4, 203.5, 308.5, 51.3, 20.2, 38.7] '105', '115', '125', '135', '145', '155'
+            dataPointsY: ['85', '95', '15', '25', '35', '45', '55', '65', '15', '25', '35', '45', '55', '65', '75']
+        };
+
+        var dataDef_4 = { title: "",
+            xLabel: '',
+            yLabel: '',
+            labelFont: '',
+            dataPointFont: '',
+            renderTypes: [CanvasChart.renderType.lines, CanvasChart.renderType.points],
+            dataPointsX: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'],
+            //dataPointsY: [7.2, 3.9, 248.0, 12.8, 23.1, 36.5, 62.9, 92.2, 123.9, 151.4, 203.5, 308.5, 51.3, 20.2, 38.7] '105', '115', '125', '135', '145', '155'
+            dataPointsY: ['20', '35', '25', '10', '15', '16', '45', '30', '55', '25', '35', '79', '45', '40', '65']
+        };
+
+        var dataDef_5 = { title: "",
+            xLabel: '',
+            yLabel: '',
+            labelFont: '',
+            dataPointFont: '',
+            renderTypes: [CanvasChart.renderType.lines, CanvasChart.renderType.points],
+            dataPointsX: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'],
+            //dataPointsY: [7.2, 3.9, 248.0, 12.8, 23.1, 36.5, 62.9, 92.2, 123.9, 151.4, 203.5, 308.5, 51.3, 20.2, 38.7] '105', '115', '125', '135', '145', '155'
+            dataPointsY: ['55', '65', '15', '25', '35', '85', '25', '55', '65', '35', '95', '45', '15', '45', '75']
+        };
+
+        var dataDef_6 = { title: "",
+            xLabel: '',
+            yLabel: '',
+            labelFont: '',
+            dataPointFont: '',
+            renderTypes: [CanvasChart.renderType.lines, CanvasChart.renderType.points],
+            dataPointsX: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'],
+            //dataPointsY: [7.2, 3.9, 248.0, 12.8, 23.1, 36.5, 62.9, 92.2, 123.9, 151.4, 203.5, 308.5, 51.3, 20.2, 38.7] '105', '115', '125', '135', '145', '155'
+            dataPointsY: ['20', '15', '10', '45', '35', '25', '16', '30', '35', '45', '40', '65', '79', '55', '25']
+        };
+
+        var dataDef_7 = { title: "",
+            xLabel: '',
+            yLabel: '',
+            labelFont: '',
+            dataPointFont: '',
+            renderTypes: [CanvasChart.renderType.lines, CanvasChart.renderType.points],
+            dataPointsX: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'],
+            //dataPointsY: [7.2, 3.9, 248.0, 12.8, 23.1, 36.5, 62.9, 92.2, 123.9, 151.4, 203.5, 308.5, 51.3, 20.2, 38.7] '105', '115', '125', '135', '145', '155'
+            dataPointsY: ['15', '25', '35', '85', '95', '55', '65', '45', '15', '25', '35', '45', '55', '65', '75']
+        };
+
+        var dataDef_8 = { title: "",
+            xLabel: '',
+            yLabel: '',
+            labelFont: '',
+            dataPointFont: '',
+            renderTypes: [CanvasChart.renderType.lines, CanvasChart.renderType.points],
+            dataPointsX: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'],
+            //dataPointsY: [7.2, 3.9, 248.0, 12.8, 23.1, 36.5, 62.9, 92.2, 123.9, 151.4, 203.5, 308.5, 51.3, 20.2, 38.7] '105', '115', '125', '135', '145', '155'
+            dataPointsY: ['10', '20', '15', '35', '25', '16', '45', '30', '79', '55', '25', '35', '45', '40', '65']
+        };
+
+        var dataDef_9 = { title: "",
+            xLabel: '',
+            yLabel: '',
+            labelFont: '',
+            dataPointFont: '',
+            renderTypes: [CanvasChart.renderType.lines, CanvasChart.renderType.points],
+            dataPointsX: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'],
+            //dataPointsY: [7.2, 3.9, 248.0, 12.8, 23.1, 36.5, 62.9, 92.2, 123.9, 151.4, 203.5, 308.5, 51.3, 20.2, 38.7] '105', '115', '125', '135', '145', '155'
+            dataPointsY: ['85', '95', '15', '25', '35', '45', '55', '65', '15', '25', '35', '45', '55', '65', '75']
+        };
+
+        var dataDef_10 = { title: "",
+            xLabel: '',
+            yLabel: '',
+            labelFont: '',
+            dataPointFont: '',
+            renderTypes: [CanvasChart.renderType.lines, CanvasChart.renderType.points],
+            dataPointsX: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'],
+            //dataPointsY: [7.2, 3.9, 248.0, 12.8, 23.1, 36.5, 62.9, 92.2, 123.9, 151.4, 203.5, 308.5, 51.3, 20.2, 38.7] '105', '115', '125', '135', '145', '155'
+            dataPointsY: ['20', '35', '25', '10', '15', '16', '45', '30', '55', '25', '35', '79', '45', '40', '65']
+        };
+
+        var dataDef_11 = { title: "",
+            xLabel: '',
+            yLabel: '',
+            labelFont: '',
+            dataPointFont: '',
+            renderTypes: [CanvasChart.renderType.lines, CanvasChart.renderType.points],
+            dataPointsX: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'],
+            //dataPointsY: [7.2, 3.9, 248.0, 12.8, 23.1, 36.5, 62.9, 92.2, 123.9, 151.4, 203.5, 308.5, 51.3, 20.2, 38.7] '105', '115', '125', '135', '145', '155'
+            dataPointsY: ['55', '65', '15', '25', '35', '85', '25', '55', '65', '35', '95', '45', '15', '45', '75']
+        };
+
+        var dataDef_12 = { title: "",
+            xLabel: '',
+            yLabel: '',
+            labelFont: '',
+            dataPointFont: '',
+            renderTypes: [CanvasChart.renderType.lines, CanvasChart.renderType.points],
+            dataPointsX: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'],
+            //dataPointsY: [7.2, 3.9, 248.0, 12.8, 23.1, 36.5, 62.9, 92.2, 123.9, 151.4, 203.5, 308.5, 51.3, 20.2, 38.7] '105', '115', '125', '135', '145', '155'
+            dataPointsY: ['20', '15', '10', '45', '35', '25', '16', '30', '35', '45', '40', '65', '79', '55', '25']
+        };
+
+        var dataDef_13 = { title: "",
+            xLabel: '',
+            yLabel: '',
+            labelFont: '',
+            dataPointFont: '',
+            renderTypes: [CanvasChart.renderType.lines, CanvasChart.renderType.points],
+            dataPointsX: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'],
+            //dataPointsY: [7.2, 3.9, 248.0, 12.8, 23.1, 36.5, 62.9, 92.2, 123.9, 151.4, 203.5, 308.5, 51.3, 20.2, 38.7] '105', '115', '125', '135', '145', '155'
+            dataPointsY: ['15', '25', '35', '85', '95', '55', '65', '45', '15', '25', '35', '45', '55', '65', '75']
+        };
+
+        var dataDef_14 = { title: "",
+            xLabel: '',
+            yLabel: '',
+            labelFont: '',
+            dataPointFont: '',
+            renderTypes: [CanvasChart.renderType.lines, CanvasChart.renderType.points],
+            dataPointsX: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'],
+            //dataPointsY: [7.2, 3.9, 248.0, 12.8, 23.1, 36.5, 62.9, 92.2, 123.9, 151.4, 203.5, 308.5, 51.3, 20.2, 38.7] '105', '115', '125', '135', '145', '155'
+            dataPointsY: ['15', '25', '5', '85', '5', '55', '6', '45', '15', '25', '35', '4', '55', '65', '5']
+        };
+
+        var dataDef_barthel_10 = { title: "",
+            xLabel: '',
+            yLabel: '',
+            labelFont: '19pt Arial',
+            dataPointFont: '10pt Arial',
+            renderTypes: [CanvasChart_.renderType.lines, CanvasChart_.renderType.points],
+            dataPointsX: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+            dataPointsY: ['10', '20', '30', '40', '50', '60', '70', '80', '90', '99']
+        };
+        var dataDef_barthel_4 = { title: "",
+            xLabel: '',
+            yLabel: '',
+            labelFont: '19pt Arial',
+            dataPointFont: '10pt Arial',
+            renderTypes: [CanvasChart_.renderType.lines, CanvasChart_.renderType.points],
+            dataPointsX: ['1', '2', '3', '4'],
+            dataPointsY: ['10', '20', '30', '40']
+        };
+
+        var dataPointsX = [];
+        var dataPointsY = [];
+
+        var barthel_dataPointsX = [];
+        var barthel_dataPointsY = [];
+
+        var contextChartGraphBarthel;
+        (function () {
+            barthel_dataPointsX.length = 0;
+            barthel_dataPointsX = barthel_dataPointsX.concat(dataDef_barthel_4.dataPointsX);
+            barthel_dataPointsY = barthel_dataPointsY.concat(dataDef_barthel_4.dataPointsY);
+            contextChartGraphBarthel = createCanvas("chartgraph_barthel", "cg_canvas_barthel", 225, 600);
+            CanvasChart_.render(contextChartGraphBarthel, dataDef_barthel_4, 0);
+            CanvasChart_.renderGraphData(contextChartGraphBarthel, dataDef_barthel_4);
+        } ());
+
+        var contextChartGraphOverlap;
+        (function () {
+            contextChartGraphOverlap = createCanvas("chartgraph_activities", "cg_canvas_activities", 225, 800);
+            CanvasChart.render(contextChartGraphOverlap, dataDef, 0);
+        } ());
+
+        function ButtonPredictHandler10() {
+        // Reset the canvas and Update the Array
+        barthel_dataPointsX.length = 0;
+        barthel_dataPointsX = barthel_dataPointsX.concat(dataDef_barthel_10.dataPointsX);
+        barthel_dataPointsY = barthel_dataPointsY.concat(dataDef_barthel_10.dataPointsY);
+        contextChartGraphBarthel.canvas.width = contextChartGraphBarthel.canvas.width;
+
+        CanvasChart_.render(contextChartGraphBarthel, dataDef_barthel_10, 0);
+        CanvasChart_.renderGraphData(contextChartGraphBarthel, dataDef_barthel_10);
+        return 0;
+        }
+
+        function CheckBoxHandler() {
+            // Reset the Canvas
+            contextChartGraphOverlap.canvas.width = contextChartGraphOverlap.canvas.width;
+            CanvasChart.render(contextChartGraphOverlap, dataDef, 0);
+            dataPointsX.length = 0;
+            dataPointsY.length = 0;
+
+            if (document.getElementById("checkbox_bath_mobility").checked === true) {
+                dataPointsX = dataPointsX.concat(dataDef.dataPointsX);
+                dataPointsY = dataPointsY.concat(dataDef.dataPointsY);
+                CanvasChart.renderGraphData(contextChartGraphOverlap, dataDef, 0);
+            }
+
+            if (document.getElementById("checkbox_bathing").checked === true) {
+                dataPointsX = dataPointsX.concat(dataDef1.dataPointsX);
+                dataPointsY = dataPointsY.concat(dataDef1.dataPointsY);
+                CanvasChart.renderGraphData(contextChartGraphOverlap, dataDef1, 1);
+            }
+
+            if (document.getElementById("checkbox_bladder_control").checked === true) {
+                dataPointsX = dataPointsX.concat(dataDef_2.dataPointsX);
+                dataPointsY = dataPointsY.concat(dataDef_2.dataPointsY);
+                CanvasChart.renderGraphData(contextChartGraphOverlap, dataDef_2, 2);
+            }
+
+            if (document.getElementById("checkbox_bowel_control").checked === true) {
+                dataPointsX = dataPointsX.concat(dataDef_3.dataPointsX);
+                dataPointsY = dataPointsY.concat(dataDef_3.dataPointsY);
+                CanvasChart.renderGraphData(contextChartGraphOverlap, dataDef_3, 3);
+            }
+
+            if (document.getElementById("checkbox_chair_mobility").checked === true) {
+                dataPointsX = dataPointsX.concat(dataDef_4.dataPointsX);
+                dataPointsY = dataPointsY.concat(dataDef_4.dataPointsY);
+                CanvasChart.renderGraphData(contextChartGraphOverlap, dataDef_4, 4);
+            }
+
+            if (document.getElementById("checkbox_dressing_lower").checked === true) {
+                dataPointsX = dataPointsX.concat(dataDef_5.dataPointsX);
+                dataPointsY = dataPointsY.concat(dataDef_5.dataPointsY);
+                CanvasChart.renderGraphData(contextChartGraphOverlap, dataDef_5, 5);
+            }
+
+            if (document.getElementById("checkbox_dressing_upper").checked === true) {
+                dataPointsX = dataPointsX.concat(dataDef_6.dataPointsX);
+                dataPointsY = dataPointsY.concat(dataDef_6.dataPointsY);
+                CanvasChart.renderGraphData(contextChartGraphOverlap, dataDef_6, 6);
+            }
+
+            if (document.getElementById("checkbox_feeding").checked === true) {
+                dataPointsX = dataPointsX.concat(dataDef_7.dataPointsX);
+                dataPointsY = dataPointsY.concat(dataDef_7.dataPointsY);
+                CanvasChart.renderGraphData(contextChartGraphOverlap, dataDef_7, 7);
+            }
+
+            if (document.getElementById("checkbox_grooming").checked === true) {
+                dataPointsX = dataPointsX.concat(dataDef_8.dataPointsX);
+                dataPointsY = dataPointsY.concat(dataDef_8.dataPointsY);
+                CanvasChart.renderGraphData(contextChartGraphOverlap, dataDef_8, 8);
+            }
+
+            if (document.getElementById("checkbox_stairs").checked === true) {
+                dataPointsX = dataPointsX.concat(dataDef_9.dataPointsX);
+                dataPointsY = dataPointsY.concat(dataDef_9.dataPointsY);
+                CanvasChart.renderGraphData(contextChartGraphOverlap, dataDef_9, 9);
+            }
+
+            if (document.getElementById("checkbox_toilet_mobility").checked === true) {
+                dataPointsX = dataPointsX.concat(dataDef_10.dataPointsX);
+                dataPointsY = dataPointsY.concat(dataDef_10.dataPointsY);
+                CanvasChart.renderGraphData(contextChartGraphOverlap, dataDef_10, 10);
+            }
+
+            if (document.getElementById("checkbox_toileting").checked === true) {
+                dataPointsX = dataPointsX.concat(dataDef_11.dataPointsX);
+                dataPointsY = dataPointsY.concat(dataDef_11.dataPointsY);
+                CanvasChart.renderGraphData(contextChartGraphOverlap, dataDef_11, 11);
+            }
+
+            if (document.getElementById("checkbox_using_prosthesis").checked === true) {
+                dataPointsX = dataPointsX.concat(dataDef_12.dataPointsX);
+                dataPointsY = dataPointsY.concat(dataDef_12.dataPointsY);
+                CanvasChart.renderGraphData(contextChartGraphOverlap, dataDef_12, 12);
+            }
+
+            if (document.getElementById("checkbox_walking").checked === true) {
+                dataPointsX = dataPointsX.concat(dataDef_13.dataPointsX);
+                dataPointsY = dataPointsY.concat(dataDef_13.dataPointsY);
+                CanvasChart.renderGraphData(contextChartGraphOverlap, dataDef_13, 13);
+            }
+
+            if (document.getElementById("checkbox_wheel_chair_ambulation").checked === true) {
+                dataPointsX = dataPointsX.concat(dataDef_14.dataPointsX);
+                dataPointsY = dataPointsY.concat(dataDef_14.dataPointsY);
+                CanvasChart.renderGraphData(contextChartGraphOverlap, dataDef_14, 14);
+            }
+            return 0;
+        }
+    </script>
+</body>
+</html>
